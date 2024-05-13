@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package bookstore;
+
+message Person {
+  string name = 1;
+  string email = 2;
+  string password =3;
+}
+
+message SignUpRequest {
+  string name = 1;
+  string email = 2;
+  string password = 3;
+}
+
+message SignUpResponse {
+  string message = 1;
+}
+
+message LoginRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  string token = 1;
+}
+
+message Book {
+  string id = 1;
+  string author = 2;
+  string bookname = 3;
+  float price = 4;
+}
+
+message AddBookRequest {
+  string id = 1;
+  string author = 2;
+  string bookname = 3;
+  float price = 4;
+}
+
+message UpdateBookRequest {
+  string id = 1;
+  string author = 2;
+  string bookname = 3;
+  float price = 4;
+}
+
+message RemoveBookRequest {
+  string id = 1;
+}
+
+service BookstoreService {
+  rpc SignUp(SignUpRequest) returns (SignUpResponse);
+  rpc Login(LoginRequest) returns (LoginResponse);
+  rpc AddBook(AddBookRequest) returns (Book);
+  rpc UpdateBook(UpdateBookRequest) returns (Book);
+  rpc RemoveBook(RemoveBookRequest) returns (Book);
+  rpc LogBook(Book) returns(Book);
+  rpc LogPerson(Person) returns(Person);
+}
