@@ -12,6 +12,9 @@ export interface ProtoGrpcType {
     AddBookRequest: MessageTypeDefinition
     Book: MessageTypeDefinition
     BookstoreService: SubtypeConstructor<typeof grpc.Client, _bookstore_BookstoreServiceClient> & { service: _bookstore_BookstoreServiceDefinition }
+    Empty: MessageTypeDefinition
+    LogBookResponse: MessageTypeDefinition
+    LogPersonResponse: MessageTypeDefinition
     LoginRequest: MessageTypeDefinition
     LoginResponse: MessageTypeDefinition
     Person: MessageTypeDefinition

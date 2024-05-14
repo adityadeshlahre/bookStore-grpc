@@ -52,12 +52,22 @@ message RemoveBookRequest {
   string id = 1;
 }
 
+message LogBookResponse {
+  repeated Book books = 1;
+}
+
+message LogPersonResponse {
+  repeated Person persons = 1;
+}
+
+message Empty {}
+
 service BookstoreService {
   rpc SignUp(SignUpRequest) returns (SignUpResponse);
   rpc Login(LoginRequest) returns (LoginResponse);
   rpc AddBook(AddBookRequest) returns (Book);
   rpc UpdateBook(UpdateBookRequest) returns (Book);
   rpc RemoveBook(RemoveBookRequest) returns (Book);
-  rpc LogBook(Book) returns(Book);
-  rpc LogPerson(Person) returns(Person);
+  rpc LogBook(Empty) returns(LogBookResponse);
+  rpc LogPerson(Empty) returns(LogPersonResponse);
 }

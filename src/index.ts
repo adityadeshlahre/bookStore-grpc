@@ -122,10 +122,30 @@ const handler: BookstoreServiceHandlers = {
     }
   },
   LogBook: (call, callback) => {
-    callback(null, { books: BOOKS });
+    try {
+      callback(null, { books: BOOKS });
+    } catch (error) {
+      callback(
+        {
+          code: Status.INTERNAL,
+          details: "An error occurred while retrieving books",
+        },
+        null
+      );
+    }
   },
   LogPerson: (call, callback) => {
-    callback(null, { persons: PERSONS });
+    try {
+      callback(null, { persons: PERSONS });
+    } catch (error) {
+      callback(
+        {
+          code: Status.INTERNAL,
+          details: "An error occurred while retrieving persons",
+        },
+        null
+      );
+    }
   },
 };
 
