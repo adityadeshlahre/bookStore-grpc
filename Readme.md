@@ -1,3 +1,3 @@
-## GRPC & graphql
+## GRPC
 
 - Practicing

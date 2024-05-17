@@ -1,10 +1,8 @@
 import path from "path";
 import * as grpc from "@grpc/grpc-js";
-import { GrpcObject, ServiceClientConstructor } from "@grpc/grpc-js";
 import * as protoLoader from "@grpc/proto-loader";
 import { Status } from "@grpc/grpc-js/build/src/constants";
 import { ProtoGrpcType } from "./generated/main";
-import { SignUpRequest } from "./generated/bookstore/SignUpRequest";
 import {
   BookstoreServiceClient,
   BookstoreServiceHandlers,
